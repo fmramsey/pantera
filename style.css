@@ -1,10 +1,50 @@
 body {
+    margin: 0;
     color: whitesmoke;
     background-color: #191919;
     font-family: 'Zen Kaku Gothic Antique', sans-serif;
 }
 
-.button {
+@-webkit-keyframes animatebottom {
+    from {
+        bottom: -50px;
+        opacity: 0
+    }
+
+    to {
+        bottom: 0px;
+        opacity: 1
+    }
+}
+
+@keyframes animatebottom {
+    from {
+        bottom: -50px;
+        opacity: 0
+    }
+
+    to {
+        bottom: 0;
+        opacity: 1
+    }
+}
+
+#button {
+    display: block;
     color: whitesmoke;
-    background-color: black;
+    font-size: 14px;
+    font-weight: lighter;
+    text-decoration: none;
+    transition: 0.7s;
+    -webkit-animation-name: animatebottom;
+    -webkit-animation-duration: 2s;
+    animation-name: animatebottom;
+    animation-duration: 2s;
+    transform: scale(1.0);
+}
+
+#button:hover {
+    color: #ffffff80;
+    transform: scale(1.15);
+    transition: transform 0.55s ease;
 }

@@ -329,34 +329,21 @@ var wordList = [
     return results;
   }
 
+
+function randomize(string){
+    return string[Math.floor(Math.random()*string.length)];
+}
+
 function cRefresh() {
     
     var word = words();
 
     var items = ["Token", "Moon", "Coin", "Cash", "Swap", "Hash", "Pool", "Network", "Mask", "Chain", "Link"]
-    var item = items[Math.floor(Math.random()*items.length)];
+    var item = randomize(items);
 
-    var one = word.charAt(0);
-    var two = item.charAt(0); 
-    var one1 = word.charAt(1);
-    var two2 = item.charAt(1); 
-
-    var finalArray = [word + item + " (" + one.toUpperCase() + one1.toUpperCase() + two2.toUpperCase() + two.toUpperCase() + ")",
-    word + " " + item + " (" + one.toUpperCase() + one1.toUpperCase() + two2.toUpperCase() + two.toUpperCase() + ")",
-    "Wrapped " + word + item + " (" + one.toUpperCase() + one1.toUpperCase() + two2.toUpperCase() + two.toUpperCase() + ")",
-    "Wrapped " + word + " " + item + " (" + one.toUpperCase() + one1.toUpperCase() + two2.toUpperCase() + two.toUpperCase() + ")",
-    word + item + " Classic" +" (" + one.toUpperCase() + one1.toUpperCase() + two2.toUpperCase() + two.toUpperCase() + ")",
-    word + " " + item + " Classic" +" (" + one.toUpperCase() + one1.toUpperCase() + two2.toUpperCase() + two.toUpperCase() + ")",
-    word + item + " (" + one.toUpperCase() + one1.toUpperCase() + two.toUpperCase() + ")", 
-    word + " " + item + " (" + one.toUpperCase() + one1.toUpperCase() + two.toUpperCase() + ")", 
-    word + item + " (" + one.toUpperCase() + two2.toUpperCase() + two.toUpperCase() + ")",
-    word + " " + item + " (" + one.toUpperCase() + two2.toUpperCase() + two.toUpperCase() + ")",
-    word + item + " (" + one.toUpperCase() + one1.toUpperCase() + two2.toUpperCase() + two.toUpperCase() + ")",
-    word + " " + item + " (" + one.toUpperCase() + one1.toUpperCase() + two2.toUpperCase() + two.toUpperCase() + ")"
-    ]
-
-    var final = finalArray[Math.floor(Math.random()*finalArray.length)] 
-
-    console.log(final);
+    var arg1 = ["", "Wrapped "]
+    var arg2 = [""," Classic"]
+         
+    console.log(randomize(arg1) + word + item + randomize(arg2)  + " (" + word.charAt(0).toUpperCase() + word.charAt(1).toUpperCase() + item.charAt(1).toUpperCase() + item.charAt(0).toUpperCase() + ")");
     document.getElementById("Value").innerHTML = final;
 }

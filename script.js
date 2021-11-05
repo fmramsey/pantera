@@ -343,7 +343,9 @@ function cRefresh() {
 
     var arg1 = ["", "Wrapped "]
     var arg2 = [""," Classic"]
-         
-    console.log(randomize(arg1) + word + item + randomize(arg2)  + " (" + word.charAt(0).toUpperCase() + word.charAt(1).toUpperCase() + item.charAt(1).toUpperCase() + item.charAt(0).toUpperCase() + ")");
+  
+    var final = randomize(arg1) + word + item + randomize(arg2)  + " (" + word.charAt(0).toUpperCase() + word.charAt(1).toUpperCase() + item.charAt(1).toUpperCase() + item.charAt(0).toUpperCase() + ")"
+
+    console.log(final);
     document.getElementById("Value").innerHTML = final;
 }

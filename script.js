@@ -338,13 +338,19 @@ function cRefresh() {
     
     var word = words();
 
-    var items = ["Token", "Moon", "Coin", "Cash", "Swap", "Hash", "Pool", "Network", "Mask", "Chain", "Link"]
+    var items = ["Token", "Moon", "Coin", "Cash", "Swap", "Hash", "Pool", "Network", "Mask", "Chain", "Link"];
     var item = randomize(items);
 
-    var arg1 = ["", "Wrapped "]
-    var arg2 = [""," Classic"]
+    var charts = [word.charAt(0) + word.charAt(1) + item.charAt(1) + item.charAt(0),
+      word.charAt(0) + word.charAt(1) + item.charAt(0),
+      word.charAt(0) + word.charAt(1) + item.charAt(1),
+      word.charAt(0) + item.charAt(1) + item.charAt(0),
+      word.charAt(1) + item.charAt(1) + item.charAt(0)];
+
+    var arg1 = ["", "Wrapped "];
+    var arg2 = [""," Classic"];
   
-    var final = randomize(arg1) + word + item + randomize(arg2)  + " (" + word.charAt(0).toUpperCase() + word.charAt(1).toUpperCase() + item.charAt(1).toUpperCase() + item.charAt(0).toUpperCase() + ")"
+    var final = randomize(arg1) + word + item + randomize(arg2)  + " (" + randomize(charts).toUpperCase() + ")";
 
     console.log(final);
     document.getElementById("Value").innerHTML = final;

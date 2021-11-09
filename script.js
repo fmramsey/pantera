@@ -6,11 +6,11 @@ var wordList = [
     "Advice","Affect","Afraid","After","Afternoon","Again","Against","Age",
     "Ago","Agree","Ahead","Aid","Air","Airplane","Alike","Alive",
     "All","Allow","Almost","Alone","Along","Aloud","Alphabet","Already",
-    "Also","Although","Am","Among","Amount","Ancient","Angle","Angry",
+    "Also","Although","Am","Among","AmongUS","Amount","Ancient","Angle","Angry",
     "Animal","Announced","Another","Answer","Ants","Any","Anybody","Anyone",
     "Anything","Anyway","Anywhere","Apart","Apartment","Appearance","Apple","Applied",
     "Appropriate","Are","Area","Arm","Army","Around","Arrange","Arrangement",
-    "Arrive","Arrow","Art","Article","As","Aside","Ask","Asleep",
+    "Arrive","Arrow","Art","Article","As","Ass","Aside","Ask","Asleep",
     "At","Ate","Atmosphere","Atom","Atomic","Attached","Attack","Attempt",
     "Attention","Audience","Author","Automobile","Available","Average","Avoid","Aware",
     "Away","Baby","Back","Bad","Badly","Bag","Balance","Ball",
@@ -206,7 +206,7 @@ var wordList = [
     "Stream","Street","Strength","Stretch","Strike","String","Strip","Strong",
     "Stronger","Struck","Structure","Struggle","Stuck","Student","Studied","Studying",
     "Subject","Substance","Success","Successful","Such","Sudden","Suddenly","Sugar",
-    "Suggest","Suit","Sum","Summer","Sun","Sunlight","Supper","Supply",
+    "Suggest","Suit","Sum","Summer","Sun","Sus","Sunlight","Supper","Supply",
     "Support","Suppose","Sure","Surface","Surprise","Surrounded","Swam","Sweet",
     "Swept","Swim","Swimming","Swing","Swung","Syllable","Symbol","System",
     "Table","Tail","Take","Taken","Tales","Talk","Tall","Tank",
@@ -329,11 +329,18 @@ var wordList = [
     return results;
   }
 
-
 function randomize(string){
     return string[Math.floor(Math.random()*string.length)];
 }
 
+document.addEventListener("keypress", function onEvent(event) {
+  if (event.key === "Enter") {
+    cRefresh();
+  } else if (event.key === " ") {
+    cRefresh();
+  }
+});
+  
 function cRefresh() {
     
     var word = words();
@@ -351,7 +358,7 @@ function cRefresh() {
     var arg2 = [""," Classic"];
   
     var final = randomize(arg1) + word + item + randomize(arg2)  + " (" + randomize(charts).toUpperCase() + ")";
-
+    
     console.log(final);
     document.getElementById("Value").innerHTML = final;
 }
